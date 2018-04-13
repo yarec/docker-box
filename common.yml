@@ -1,0 +1,6 @@
+version: '2.1'
+services:
+  common:
+    volumes:
+      - ./openresty/sites-enabled:/opt/openresty/nginx/sites-enabled
+      - ~/opt:/ws

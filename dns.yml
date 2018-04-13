@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  dns:
+    container_name: dns
+    image: yarec/prod_dns
+    command: dnsmasq -d
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    networks:
+      st:
+        ipv4_address: 172.2.0.2

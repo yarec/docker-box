@@ -1,0 +1,28 @@
+version: '2.1'
+services:
+  openresty:
+    container_name: ngx
+    extends:
+        file: common.yml
+        service: common
+    image: yarec/prod_openresty
+    ports:
+      - "80:80"
+    dns:
+      - 172.2.0.2
+    environment:
+      - verynginx_prefix=/opt/openresty/nginx
+      - SERVICE_TAGS=urlprefix-/
+      - SERVICE_CHECK_HTTP=/
+    networks:
+      st:
+        ipv4_address: 172.2.0.3
+
+networks:
+  st:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.2.0.0/24
+        gateway: 172.2.0.1

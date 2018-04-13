@@ -1,0 +1,28 @@
+version: '2.1'
+services:
+  php:
+    container_name: php
+    extends:
+        file: common.yml
+        service: common
+    image: mikechernev/php7-fpm-laravel
+    ports:
+      - "9900:9000"
+    environment:
+      - LOG_PATH=/ws/log
+      - VENDOR_PATH=/ws/htdocs/tpl_vendor
+      - DEV_MODE=docker
+      - MONOLOG=yes
+      - WHOOPS_ENABLED=yes
+      - APPLICATION_ENV=develop
+      - REDIS_PORT=6379
+      - UC_HOST=http://uc.softidy.com
+      - UC_CLIENT_ID=UC59a67e6e64f74
+      - UC_CLIENT_SECRET=012b58731bc80c2aa3354dbaa11f41e4
+      - UC_USERNAME=admin
+      - UC_PASSWD=123456
+    dns:
+      - 172.2.0.2
+    networks:
+      st:
+        ipv4_address: 172.2.0.4

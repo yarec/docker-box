@@ -1,0 +1,14 @@
+/data/ws/log/nginx/access.log {
+    nocompress
+    daily
+    copytruncate
+    create
+    notifempty
+    rotate 7
+    olddir /data/ws/log/nginx/
+    missingok
+    dateext
+    postrotate
+        ls || true
+    endscript
+}

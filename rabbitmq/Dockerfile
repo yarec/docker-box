@@ -1,0 +1,2 @@
+FROM smebberson/alpine-rabbitmq
+

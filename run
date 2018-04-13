@@ -1,0 +1,10 @@
+#!/bin/sh
+RUN_PATH=$(cd "$(dirname "$0")"; pwd)
+cd $RUN_PATH
+	docker-compose \
+	-f docker-compose.yml \
+	-f dns.yml \
+	-f php.yml \
+	-f php5.yml \
+	-f mysql.yml \
+	up &

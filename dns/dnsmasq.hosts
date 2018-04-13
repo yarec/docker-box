@@ -1,0 +1,4 @@
+hostip dockerhost
+
+172.1.0.21 redis
+172.1.0.22 mysql

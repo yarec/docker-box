@@ -1,0 +1,21 @@
+version: '2.1'
+services:
+  php5:
+    container_name: php5
+    extends:
+        file: common.yml
+        service: common
+    image: yarec/prod_php
+    ports:
+      - "9901:9000"
+    environment:
+      - LOG_PATH=/ws/log
+      - VENDOR_PATH=/ws/htdocs/tpl_vendor
+      - DEV_MODE=docker
+      - MONOLOG=yes
+      - APPLICATION_ENV=develop
+    dns:
+      - 172.2.0.2
+    networks:
+      st:
+        ipv4_address: 172.2.0.5
