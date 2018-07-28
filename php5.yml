@@ -5,7 +5,7 @@ services:
     extends:
         file: common.yml
         service: common
-    image: yarec/prod_php
+    image: box_php
     ports:
       - "9901:9000"
     environment:
