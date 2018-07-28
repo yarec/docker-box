@@ -1,4 +1,4 @@
-FROM yarec/php:fpm
+FROM mikechernev/php7-fpm-laravel
 
 ENV USER_NAME docker
 
