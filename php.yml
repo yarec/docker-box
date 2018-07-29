@@ -5,7 +5,7 @@ services:
     extends:
         file: common.yml
         service: common
-    image: mikechernev/php7-fpm-laravel
+    image: box_php
     ports:
       - "9900:9000"
     environment:

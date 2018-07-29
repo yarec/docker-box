@@ -5,7 +5,7 @@ services:
     extends:
         file: common.yml
         service: common
-    image: yarec/prod_openresty
+    image: box_openresty
     ports:
       - "80:80"
     dns:
