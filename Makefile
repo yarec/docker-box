@@ -1,5 +1,5 @@
 
-DIRS := $(shell find . -maxdepth 1 -type d|sed s@./@@g | sed /samples/d |sed 1d)
+DIRS := $(shell find . -maxdepth 1 -type d|sed s@./@@g | sed /samples/d |sed /.git/d |sed 1d)
 
 # Everything after this is generic
 
