@@ -6,8 +6,11 @@ services:
         file: common.yml
         service: common
     image: box_openresty
+    volumes:
+      - /root/.acme.sh:/opt/openresty/nginx/acme
     ports:
       - "80:80"
+      - "433:433"
     dns:
       - 172.2.0.2
     environment:
@@ -18,11 +21,3 @@ services:
       st:
         ipv4_address: 172.2.0.3
 
-networks:
-  st:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.2.0.0/24
-        gateway: 172.2.0.1
